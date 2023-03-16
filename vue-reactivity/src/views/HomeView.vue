@@ -1,7 +1,10 @@
 <script>
+import Button from "../components/Button.vue";
 export default {
   name: "Home",
-  components: {},
+  components: {
+    Button,
+  },
   data(){
     return{
       selected: "",
@@ -14,7 +17,7 @@ export default {
   computed:{
     now: function(){
       const time = new Date();
-      return `${time.getHours}:${time.getMinutes}`;
+      return `${time.getHours()}:${time.getMinutes()}`;
     },
   },
   methods: {},
@@ -38,7 +41,9 @@ button {
 
 <template>
   <div class="home">
-    <h2>{{ now }}</h2>
+<Button>Buttpn 1</Button>
+<Button>Buttpn 2</Button>
+
   </div>
   <!-- <div class="home">
     <select v-model="selected">
