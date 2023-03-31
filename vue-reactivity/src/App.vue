@@ -16,6 +16,6 @@ h1 {
   text-align: center;
   margin-top: 2px;
   font-weight: bold;
-  color: white;
+  color: black;
 }
 </style>
