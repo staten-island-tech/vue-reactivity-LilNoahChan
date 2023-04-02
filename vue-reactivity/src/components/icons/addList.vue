@@ -17,5 +17,10 @@
   </script>
   
   <style scoped>
-  
+  button{
+  width: 200px;
+  font-size: 15px;
+  border: 10px white;
+  border-radius: 50px;
+  }
   </style>
