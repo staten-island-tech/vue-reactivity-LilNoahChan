@@ -11,11 +11,14 @@ import HelloWorld from './components/icons/HelloWorld.vue'
 
 <style scoped>
 h1 {
-  font-size: 5vh;
-  margin: auto;
+  position: relative;
+  padding: 0;
+  margin: 0;
   text-align: center;
-  margin-top: 2px;
-  font-weight: bold;
-  color: black;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  color: #080808;
 }
+
 </style>
