@@ -1,5 +1,4 @@
 <script>
-import removeList from "../components/icons/removeList.vue";
 import addList from "../components/icons/addList.vue";
 import Card from "../components/icons/Card.vue";
 import {store} from "../components/icons/store.js";
