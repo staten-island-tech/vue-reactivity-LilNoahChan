@@ -1,62 +1,60 @@
-
 <template>
-<div class="card">
-  <h2> {{name}}</h2>
-  <img :src="image" alt="">
-  <p>Cost: ${{ cost }}</p>
-  <addList @click="click">
-  Add {{ name }} to list ${{ cost }}
-  </addList>
-</div>
+  <div class="card">
+    
+    <h2>{{ name }}</h2>
+
+    <img :src="image" alt="" />
+
+    <p>Cost: ${{ cost }}</p>
+
+    <addList @button-click="addToList()"> Add {{ name }} to list ${{ cost }} </addList>
+  </div>
 </template>
 
 <script>
 import addList from "./addList.vue";
-import {store} from "./store.js";
 
-export default{
-  name: "Card",
-  props: {
-    name: String,
-    cost: Number,
-    image: String,
-  },
-  data(){
-    return{
-      store,
-    };
-  },
-  components: {
-    addList,
-  },
-  methods: {
-    
-  }
+  export default {
+    name: "Card",
+    props: {
+      name: String,
+      cost: Number,
+      image: String,
+    },
 
-}
+    components: {
+      addList,
+    },
+
+    methods: {
+      addToList() {
+        this.$emit('addToList', {product: this.name, cost: this.cost})
+      }
+    }
+  };
 </script>
 
-
-<style scoped>
-button{
+<style>
+button {
   width: 100px;
   height: 100px;
 }
 .card {
   height: fit-content;
   display: flex;
-  flex-direction:column ;
+  flex-direction: column;
   padding: 1rem 1rem 2rem;
   background: #f8f3e8;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.2);
   border-radius: 3px;
   margin-bottom: 30px;
+  width: fit-content;
+  align-items: center;
 }
 
 .card > img {
   width: 100%;
   height: auto;
-
 }
 
 .card > h2 {
@@ -74,5 +72,4 @@ button{
   color: #5e5e89;
   text-align: center;
 }
-
 </style>
